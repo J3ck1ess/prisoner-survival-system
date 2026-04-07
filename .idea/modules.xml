@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/prisoner-suivival-core/prisoner-suivival-core.iml" filepath="$PROJECT_DIR$/prisoner-suivival-core/prisoner-suivival-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/prisoner-survival-core/prisoner-survival-core.iml" filepath="$PROJECT_DIR$/prisoner-survival-core/prisoner-survival-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/prisoner-survival-system.iml" filepath="$PROJECT_DIR$/prisoner-survival-system.iml" />
+    </modules>
+  </component>
+</project>
