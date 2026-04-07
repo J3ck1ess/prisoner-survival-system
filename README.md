@@ -31,9 +31,13 @@ Run `App.java`
 ## Output Example
 
 The remaining number of players in this round: 50
+
 The remaining number of players in this round: 25
+
 ......
+
 The remaining number of players in this round: 3
+
 The remaining number of players in this round: 1
 
 The final survivor:
