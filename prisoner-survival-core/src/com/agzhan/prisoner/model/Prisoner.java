@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class Prisoner {
-    private int id; // 囚犯的随机编号
-    private int firstLocation; // 囚犯第一次出现的位置
+    private int id; // Random numbering of prisoners
+    private int firstLocation; // The location where the prisoner first appearance
 
     @Override
     public String toString() {
-        return "(id: " + id + ", firstLocation: " + firstLocation + ")";
+        return "[" + id + "]";
     }
 }
