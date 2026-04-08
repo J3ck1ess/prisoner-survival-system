@@ -1,44 +1,57 @@
 # Prisoner Survival System (Josephus Problem)
 
-A Java simulation of the classic Josephus problem.
-
-## Description
-
-- 100 prisoners are assigned unique random IDs (1–200)
-- They stand in a line based on initial position
-- In each round:
-    - Prisoners in odd positions are eliminated
-    - Remaining prisoners are re-indexed
-- The process continues until only one survivor remains
+A Java-based simulation of the classic Josephus problem.
 
 ## Features
 
-- Object-oriented design (Model / Service / Util)
-- Unique ID generation (HashSet)
-- Iterative elimination logic
-- Clear separation of responsibilities
+- Dynamic input (number of prisoners & step size)
+- Accurate Josephus elimination algorithm
+- Real-time elimination logging
+- Exception handling for invalid input
+- Object-oriented layered design (Model / Service / Util)
 
 ## Tech Stack
 
 - Java
 - Collections (List, Set)
-- OOP design
+- OOP Design
+- Exception Handling
+
+## How It Works
+
+- Prisoners are assigned unique random IDs
+- They are arranged in a circle
+- Every `step`-th prisoner is eliminated
+- The process repeats until one survivor remains
 
 ## Run
 
 Run `App.java`
 
-## Output Example
+## Example Output
 
-The remaining number of players in this round: 50
+====== Welcome to the Prisoner Survival System =====
 
-The remaining number of players in this round: 25
+Enter the number of prisoners:
+
+50
+
+Enter the step for eliminate:
+
+4
+
+Initial prisoners: [[38], [196], [105], [99], [52], [31], [1], [143], [190], [124], [84], [23], [5], [166], [71], [191], [59], [185], [104], [169], [54], [73], [47], [88], [131], [29], [175], [162], [83], [158], [3], [11], [183], [132], [18], [151], [13], [178], [79], [110], [111], [36], [140], [146], [180], [122], [118], [28], [144], [67]]
+
+[INFO]2026-04-08 18:40:11 - Elimination number: 99 - Remaining number: 49
+
+[INFO]2026-04-08 18:40:11 - Elimination number: 143 - Remaining number: 48
 
 ......
 
-The remaining number of players in this round: 3
+[INFO]2026-04-08 18:40:11 - Elimination number: 158 - Remaining number: 2
 
-The remaining number of players in this round: 1
+[INFO]2026-04-08 18:40:11 - Elimination number: 38 - Remaining number: 1
 
 The final survivor:
-ID: 181, Position: 64
+
+ID: 118, First position: 47
