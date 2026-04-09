@@ -6,6 +6,7 @@ import com.agzhan.prisoner.service.PrisonerService;
 import com.agzhan.prisoner.util.LogUtil;
 import com.agzhan.prisoner.util.PrisonerUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -19,29 +20,36 @@ public class App {
             try {
                 System.out.println("====== Welcome to the Prisoner Survival System =====");
 
-                // 1. Generate prisoners
                 System.out.println("Enter the number of prisoners: ");
                 int count = sc.nextInt();
                 if (count <= 0) {
-                    throw new PrisonerException("Invalid number of prisoners.");
+                    throw new PrisonerException("The number of prisoners must be greater than 0.");
                 }
 
-                // 2. Implement the elimination process
-                System.out.println("Enter the step for eliminate: ");
+                System.out.println("Enter the step for elimination: ");
                 int step = sc.nextInt();
                 if (step <= 0) {
-                    throw new PrisonerException("Invalid step.");
+                    throw new PrisonerException("Step must be greater than 0.");
                 }
 
+                // Generate prisoners
                 List<Prisoner> prisoners = PrisonerUtil.generatePrisoners(count);
-                System.out.println("Initial prisoners: " + prisoners);
 
-                Prisoner survivor = PrisonerService.findSurvivor(prisoners, step);
+                LogUtil.info("Initial prisoners: " + prisoners);
 
-                // 3. Print the result
-                System.out.println("\nThe final survivor: ");
-                System.out.println("ID: " + survivor.getId() +
-                        ", First position: " + survivor.getFirstLocation());
+                // Simulation solution
+                Prisoner survivor1 = PrisonerService.findSurvivor(new ArrayList<>(prisoners), step);
+
+                System.out.println("\nSimulation Result:");
+                System.out.println("ID: " + survivor1.getId() +
+                        ", First position: " + survivor1.getFirstLocation());
+
+                // Mathematical solution
+                Prisoner survivor2 = PrisonerService.findSurvivorMath(prisoners, step);
+
+                System.out.println("\nMathematical Result:");
+                System.out.println("ID: " + survivor2.getId() +
+                        ", First position: " + survivor2.getFirstLocation());
 
                 break;
 
@@ -50,7 +58,7 @@ public class App {
 
             } catch (Exception e) {
                 LogUtil.error("Input error, please re-enter!");
-                sc.nextLine();
+                sc.nextLine(); // Clear invalid input
             }
         }
 
